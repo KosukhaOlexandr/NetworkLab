@@ -35,12 +35,6 @@ int main(int argc, char const *argv[])
     serv_addr.sin_family = AF_INET;
     serv_addr.sin_port = htons(PORT);
     serv_addr.sin_addr.s_addr = inet_addr("127.0.0.1");
-    // Convert IPv4 and IPv6 addresses from text to binary form
-//    if(inet_pton(AF_INET, "127.0.0.1", &serv_addr.sin_addr)<=0)
-//    {
-//        printf("\nInvalid address/ Address not supported \n");
-//        return -1;
-//    }
 
     if (connect(sock, (struct sockaddr *)&serv_addr, sizeof(serv_addr)) != 0)
     {
@@ -99,7 +93,6 @@ int main(int argc, char const *argv[])
             }
             printf("%s\n", buffer);
             memset(buffer, 0, sizeof(*buffer));
-            cout << 1 << '\n';
 
         }
         if (s == "exit")
