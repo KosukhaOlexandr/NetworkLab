@@ -95,7 +95,6 @@ int main(int argc, char const *argv[])
                         if (arr[s] != change[s]) {
                             arr[s] = change[s];
                             notificate += "<" + to_string(s) + "; " + change[s] + "> ";
-                            printf("Hello message sent\n");
                             k++;
                         }
                         s++;
@@ -114,7 +113,7 @@ int main(int argc, char const *argv[])
                         cout << notificate << '\n';
                     }
                 }
-                char ex[15] = "exitk_change";// костиль
+                char ex[15] = "exitk_change";// Буфер чомусь не очищується
                 if (strcmp(buffer, ex) == 0) {
                     memset(buffer, 0, sizeof(*buffer));
                     printf("Exit\n");
